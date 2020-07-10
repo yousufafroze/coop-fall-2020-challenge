@@ -17,7 +17,7 @@ class EventSourcer():
         return self.value
 
     def undo(self):
-        if self.stack:
+        if len(self.stack)>1:
           old_val = self.stack.pop()
           self.redo_lst.append(old_val)
           self.value = self.stack[-1]
